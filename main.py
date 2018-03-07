@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sys import argv
 import numpy as np
 from data import *
-import pp
+//import pp
 
 assert len(argv) == 2
 problem_label = argv[1]
