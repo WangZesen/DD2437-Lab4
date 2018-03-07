@@ -10,7 +10,7 @@ def get_train_data():
 			train_data.append([])
 			info = line.split(",")
 			for i in range(784):
-				train_data[-1].append(int(info[i]))
+				train_data[-1].append(float(info[i]))
 	with open("binMNIST_data/targetdigit_trn.csv") as f:
 		lines = f.readlines()
 		for line in lines:
@@ -27,7 +27,7 @@ def get_test_data():
 			test_data.append([])
 			info = line.split(",")
 			for i in range(784):
-				test_data[-1].append(int(info[i]))
+				test_data[-1].append(float(info[i]))
 	with open("binMNIST_data/targetdigit_tst.csv") as f:
 		lines = f.readlines()
 		for line in lines:
