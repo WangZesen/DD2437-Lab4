@@ -61,13 +61,13 @@ if problem_label == "3.1.2":
 	for dim in [50, 100]:
 		# RBM
 		print "Processing RBM with dim = {}".format(dim)
-		model = BernoulliRBM(n_components = dim, learning_rate = 0.02, random_state = 1, n_iter = 60, verbose = False)
+		model = BernoulliRBM(n_components = dim, learning_rate = 0.005, random_state = 1, n_iter = 200, verbose = True)
 		model.fit(train_data)
 		for i in range(dim):
 			plt.imshow(np.reshape(model.components_[i], (28, 28)).tolist())
 			plt.savefig("results/3.1.2/RBM/{}/{}.png".format(dim, i + 1))
 		print model.components_.shape
-		
+		'''
 		# AE
 		print "Processing AE with dim = {}".format(dim)
 		model = MLPClassifier(hidden_layer_sizes = (dim, ), random_state = 1, learning_rate_init = 0.003, verbose = False, max_iter = 60)
@@ -77,8 +77,6 @@ if problem_label == "3.1.2":
 		for i in range(dim):
 			plt.imshow(np.reshape(model.coefs_[1][i], (28, 28)).tolist())
 			plt.savefig("results/3.1.2/AE/{}/{}.png".format(dim, i + 1))		
-		
-	
-	
-	pass
+		'''
+
 
